@@ -62,8 +62,7 @@ class Game:
         self.ball.update()  # 更新球的状态
 
     def draw(self, screen):
-        """绘制游戏画面"""
-        screen.fill(BG_COLOR)  # 填充背景色
+        """在 main.py 已绘制的背景上叠加球拍、球和得分。"""
         for player in self.players:
             player.draw(screen)  # 绘制玩家
         self.ball.draw(screen)  # 绘制球
