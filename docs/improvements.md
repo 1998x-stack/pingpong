@@ -12,5 +12,5 @@
 - Security & regression review: Only game.py, tests/test_background_render.py, and this history are changed. No secrets, personal information, network operations, permissions, workflows, or deployments added. draw() continues to render paddles, ball, and score; preserves background drawn each main loop iteration. Risk: hypothetical callers invoking Game.draw without first painting a background might now retain a previous frame; the documented main.py always blits its image first.
 - Risk & rollback: Low, local rendering-only behavior. Close the Draft PR to keep main unchanged, or revert the single game.py source commit on the feature branch after human review. Full pygame visual regression must pass before merging.
 - Follow-up: In a pygame/Box2D-capable environment, render actual frames and confirm background, moving ball and paddles, scoring, and reset key R. Independently investigate wall collision sounds with a separate reproducible test and branch.
-- Commit: d70db4721f3a9f50a3755a277c36cce88dc7b3e5 (source fix); b32d7ec6825b368b0c430b613461db204efe8ef5 (tests)
-- PR: pending
+- Commit: d70db4721f3a9f50a3755a277c36cce88dc7b3e5 (source fix); b32d7ec6825b368b0c430b613461db204efe8ef5 (tests); 26c213ff764d9391c52898e2b62a3a7e69ea092b (history initialization)
+- PR: https://github.com/1998x-stack/pingpong/pull/1 (Draft; human review required)
